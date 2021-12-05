@@ -73,10 +73,6 @@ foreach ($vents as $vent)
 
 	if ($gradient === -1)
 	{
-		if ($x1 == 8 && $y1 == 2)
-			{
-				echo "Plot: $x1, $y1, $x2, $y2\n";
-			}
 		for ($i = $x1, $j = $y1; $i <= $x2; $i++, $j--)
 		{
 			if (isset($map[$j][$i]))
