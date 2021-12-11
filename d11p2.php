@@ -27,7 +27,7 @@ while (true)
 
 	for ($y = 0; $y < $rows; $y++)
 	{
-		for ($x = 0; $x < $rows; $x++)
+		for ($x = 0; $x < $columns; $x++)
 		{
 			$octos[$y][$x]++;
 		}
@@ -59,7 +59,7 @@ while (true)
 
 		for ($y = 0; $y < $rows; $y++)
 		{
-			for ($x = 0; $x < $rows; $x++)
+			for ($x = 0; $x < $columns; $x++)
 			{
 				if ($octos[$y][$x] >= 10)
 				{
