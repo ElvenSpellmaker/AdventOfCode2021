@@ -69,14 +69,6 @@ function traverseNodes(string $current, array $pathChain, ?string $lowerUsed = n
 		return [$pathChain];
 	}
 
-	// Hit a dead end, it might still be possible to recover if
-	// the parent is a capital or hasn't been visited twice and
-	// no other lower caves have been visited.
-	if (count($nodesMap[$current]->getPaths()) === 0)
-	{
-		return [$pathChain];
-	}
-
 	$newPaths = [];
 
 	$explorePaths = $nodesMap[$current]->getPaths();
