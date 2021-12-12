@@ -79,13 +79,6 @@ function traverseNodes(string $current, array $pathChain)
 		return [$pathChain];
 	}
 
-	// Hit a dead end, it might still be possible to recover if
-	// the parent is a capital.
-	if (count($nodesMap[$current]->getPaths()) === 0)
-	{
-		return [$pathChain];
-	}
-
 	$newPaths = [];
 
 	$explorePaths = $nodesMap[$current]->getPaths();
