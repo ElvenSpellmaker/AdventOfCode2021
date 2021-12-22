@@ -18,6 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set up Zip for Composer
+        run: |
+          apt-get update
+          apt-get install -y libzip-dev
+          docker-php-ext-install zip
+
       - name: Set up Composer
         run: |
           mkdir /composer
@@ -44,7 +50,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run Tests
         run: ./build/runtests.bash
