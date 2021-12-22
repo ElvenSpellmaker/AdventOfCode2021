@@ -322,18 +322,21 @@ function drawChain(SnailNumber $sn, ?SnailNumber $parent = null, int $level = 0)
 	{
 		if ($parent !== $sn->parent)
 		{
-			echo 'shite, parent pair';
+			echo 'ERROR: Unexpected parent in pair';
 			exit;
 		}
+
 		if ($level === 4)
 		{
 			echo "\033[01;31m";
 		}
+
 		echo '[';
 		echo drawChain($sn->left, $sn, $level + 1);
 		echo ',';
 		echo drawChain($sn->right, $sn, $level + 1);
 		echo ']';
+
 		if ($level === 4)
 		{
 			echo "\033[0m";
@@ -343,12 +346,10 @@ function drawChain(SnailNumber $sn, ?SnailNumber $parent = null, int $level = 0)
 	{
 		if ($parent !== $sn->parent)
 		{
-			echo 'lol';
+			echo 'ERROR: Unexpected parent in number';
 			exit;
 		}
-		if ($level - 1  === 4)
-		{
-		}
+
 		echo $sn->left;
 	}
 
