@@ -285,7 +285,6 @@ function makeChain(string $input, ?SnailNumber $parent = null, int $level = 0)
 	if ($input[0] === '[')
 	{
 		$input = substr($input, 1, -1);
-		// Locate comma
 		$currLevel = $level;
 		$i = 0;
 		do

@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Zip for Composer
-        run: apt-get install unzip php-zip
+        run: |
+          apt-get update
+          apt-get install unzip php-zip
 
       - name: Set up Composer
         run: |
