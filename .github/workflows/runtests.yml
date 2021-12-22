@@ -21,7 +21,7 @@ jobs:
       - name: Set up Zip for Composer
         run: |
           apt-get update
-          apt-get install unzip
+          apt-get install libzip-dev
           docker-php-ext-install zip
 
       - name: Set up Composer
